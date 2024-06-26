@@ -1,15 +1,26 @@
 {
-  "build": {
-      "dockerfile": "./Dockerfile",
-      "context": "."
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "rust-lang.rust-analyzer",
-        "serayuzgur.crates",
-        "tamasfe.even-better-toml"
-      ]
-    }
-  }
+   "build":{
+      "dockerfile":"./Dockerfile",
+      "context":"."
+   },
+   "customizations":{
+      "vscode":{
+         "extensions":[
+            "rust-lang.rust-analyzer",
+            "serayuzgur.crates",
+            "tamasfe.even-better-toml"
+         ],
+         "settings":{
+            "workbench.startupEditor":"none",
+            "workbench.statusBar.visible":false,
+            "workbench.activityBar.visible":false,
+            "workbench.sideBar.location":"hidden",
+            "editor.minimap.enabled":false,
+            "terminal.integrated.commandsToSkipShell":[
+               "-workbench.action.toggleFullScreen"
+            ]
+         }
+      }
+   },
+   "postCreateCommand":"echo \"workbench.action.toggleFullScreen\" >> ~/.vscode-remote/data/Machine/settings.json && echo \"workbench.action.terminal.toggleTerminal\" >> ~/.vscode-remote/data/Machine/keybindings.json"
 }
