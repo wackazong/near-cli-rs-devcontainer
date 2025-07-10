@@ -1,6 +1,6 @@
 {
    "name": "NEAR CLI Devcontainer",
-   "postStartCommand": "echo 'export PS1=\\\"> \\\"' >> ~/.bashrc",
+   "postStartCommand": "echo \"export PS1='> '\" >> ~/.bashrc",
    "build":{
       "dockerfile":"./Dockerfile",
       "context":"."
